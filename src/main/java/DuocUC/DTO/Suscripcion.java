@@ -47,4 +47,12 @@ public class Suscripcion {
     public void setUsuario(Usuario usuario) {
         Usuario = usuario;
     }
+
+    public void agregarClub(ClubDeportivo cd){
+        this.Precio += cd.getValorSuscripcion();
+        if(!this.Equipos.isEmpty()){
+            this.Equipos += "; ";
+        }
+        this.Equipos += cd.toString();
+    }
 }
