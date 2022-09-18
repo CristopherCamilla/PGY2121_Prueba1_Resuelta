@@ -1,6 +1,10 @@
 package DuocUC.DTO;
 
+import java.text.NumberFormat;
+
 public class ClubDeportivo {
+    private static int Correlativo = 10;
+
     private String Rol_ID;
     private String Nombre;
     private String Fundador;
@@ -22,11 +26,16 @@ public class ClubDeportivo {
     }
 
     public String getRol_ID() {
-        return Rol_ID;
+        if(!this.Nombre.isEmpty())
+        {
+            Rol_ID = (this.Nombre.substring(0, 2).toUpperCase())
+                +"H"
+                +(++Correlativo);
+            return Rol_ID;
+        }
+        return "SIN ROL VÁLIDO";
     }
-    public void setRol_ID(String rol_ID) {
-        Rol_ID = rol_ID;
-    }
+    
     public String getNombre() {
         return Nombre;
     }
@@ -68,5 +77,11 @@ public class ClubDeportivo {
     }
     public void setValorSuscripcion(int valorSuscripcion) {
         ValorSuscripcion = valorSuscripcion;
+    }
+
+    @Override
+    public String toString(){
+        NumberFormat valorFormateado = NumberFormat.getCurrencyInstance();
+        return this.getRol_ID() + " " + valorFormateado.format(this.ValorSuscripcion);
     }
 }
