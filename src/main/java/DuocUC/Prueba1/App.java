@@ -1,15 +1,10 @@
 package DuocUC.Prueba1;
 
 import java.util.Locale;
-import java.util.regex.Pattern;
 
 import DuocUC.DTO.ClubDeportivo;
 import DuocUC.DTO.Usuario;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )

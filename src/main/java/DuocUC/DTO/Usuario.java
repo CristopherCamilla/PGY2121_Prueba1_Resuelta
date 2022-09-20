@@ -1,7 +1,6 @@
 package DuocUC.DTO;
 
 import java.time.Period;
-import java.util.Date;
 import java.time.LocalDate;
 
 public class Usuario {
@@ -17,7 +16,7 @@ public class Usuario {
     private String Password;
 
     public Usuario() {
-        this.ID = 0;
+        this.ID = ++Correlativo;
         this.Nombre = "No válido";
         this.Rut = 0;
         this.Dv = "No válido";
@@ -30,12 +29,6 @@ public class Usuario {
 
     public int getID() {
         return ID;
-    }
-    public void setID(int ID) {
-        this.ID = ID;
-        if(ID < 0){
-            this.ID = 0;
-        }
     }
     public String getNombre() {
         return Nombre;
